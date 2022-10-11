@@ -1,0 +1,10 @@
+/* Background */
+body {
+    justify-content: center;
+    text-align: center;
+}
+
+img {
+    max-height: 45vh;
+    border-radius: 5px;
+}
