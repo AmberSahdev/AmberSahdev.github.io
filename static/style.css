@@ -2,9 +2,12 @@
 body {
     justify-content: center;
     text-align: center;
+    font-size: 18px;
+    font-family: optima;
 }
 
 img {
-    max-height: 45vh;
-    border-radius: 5px;
+    max-height: 40vh;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px gray;
 }
