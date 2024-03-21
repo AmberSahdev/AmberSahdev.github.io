@@ -4,6 +4,7 @@ body {
     text-align: center;
     font-size: 18px;
     font-family: optima;
+    /* background-color: #F5F5F5; no bc substack embed looks weird */
 }
 
 .profile-img {
