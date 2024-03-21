@@ -6,7 +6,7 @@ body {
     font-family: optima;
 }
 
-img {
+.profile-img {
     max-height: 40vh;
     border-radius: 4px;
     box-shadow: 2px 2px 4px gray;
