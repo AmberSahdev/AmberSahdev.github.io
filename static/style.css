@@ -73,7 +73,7 @@ ul {
 .profile-card {
   display: inline-grid;            /* centers via parent's text-align */
   height: 37vh;                    /* stable height against layout shift */
-  aspect-ratio: 3 / 4;             /* consistent face size to prevent slivers */
+  aspect-ratio: 3.2 / 4;             /* consistent face size to prevent slivers */
   perspective: 1000px;
   cursor: pointer;
 }
