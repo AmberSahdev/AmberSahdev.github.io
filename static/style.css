@@ -8,15 +8,63 @@ body {
 }
 
 .profile-img {
-    max-height: 35vh;
+    max-height: 37vh;
     border-radius: 4px;
-    box-shadow: 2px 2px 4px gray;
+    box-shadow: 3px 3px 6px gray;
 }
 
 .substack-embed {
     border:1px;
-    solid #EEE; 
-    background:white; 
-    border-radius: 6px; 
+    solid #EEE;
+    background:white;
+    border-radius: 6px;
     border: none;
+}
+
+ul li {
+  /* margin-bottom: 0.5em; adds breathing room */
+  line-height: 1.5;     /* improves readability */
+}
+
+ul {
+  list-style-type: square;
+}
+
+.substack-embed-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.substack-embed-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 86px; /* adjust to cover the disclaimer */
+  background: white;
+}
+
+
+#left-align-this-text {
+  text-align: left;
+  margin: 0 auto;
+  width: 33%;
+}
+
+@media (max-width: 768px) {
+  #left-align-this-text {
+    width: 90%;
+  }
+}
+
+
+.nowrap-desktop {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nowrap-desktop {
+    white-space: normal;
+  }
 }
