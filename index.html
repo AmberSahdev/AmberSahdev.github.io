@@ -92,17 +92,75 @@ Get notified about my next project, maybe, probably:
     (function () {
       var card = document.getElementById('profile-card');
       if (!card) return;
+      var inner = card.querySelector('.profile-card-inner');
+      var frontImg = card.querySelector('.profile-face.front img');
+      var backImg  = card.querySelector('.profile-face.back img');
+      var imgs = [
+        'resources/self2.png',
+        'resources/self3.png',
+        'resources/self4.png'
+      ];
+      var idx = 0;            // index of the currently visible image
+      var flipped = false;    // false: front visible, true: back visible
+      var isFlipping = false;
+      var timerId = null;
+
+      function setFacesInitial() {
+        // Visible face shows imgs[idx]; hidden face shows the next image
+        if (!flipped) {
+          frontImg.src = imgs[idx];
+          backImg.src  = imgs[(idx + 1) % imgs.length];
+        } else {
+          backImg.src  = imgs[idx];
+          frontImg.src = imgs[(idx + 1) % imgs.length];
+        }
+      }
+
+      function updateHiddenFace() {
+        var nextIdx = (idx + 1) % imgs.length;
+        if (flipped) {
+          // Back is visible, front is hidden
+          frontImg.src = imgs[nextIdx];
+        } else {
+          // Front is visible, back is hidden
+          backImg.src = imgs[nextIdx];
+        }
+      }
+
+      function advance() {
+        if (isFlipping) return;
+        isFlipping = true;
+        card.classList.toggle('is-flipped'); // single 180° rotation per advance
+      }
+
+      function startTimer() { timerId = setInterval(advance, 10000); }
+      function restartTimer() { if (timerId) clearInterval(timerId); startTimer(); }
+
+      // Initialize
+      setFacesInitial();
+      startTimer();
+
+      // After the flip finishes, commit the next image and prep the hidden face
+      inner.addEventListener('transitionend', function (e) {
+        if (e.propertyName !== 'transform') return;
+        flipped = !flipped;                 // which face is now visible
+        idx = (idx + 1) % imgs.length;      // advance current image index
+        updateHiddenFace();                  // preload the next image on the hidden face
+        isFlipping = false;
+      });
+
+      function userAdvance() { advance(); restartTimer(); }
+
+      // Click/tap to advance
       card.addEventListener('click', function (e) {
         e.preventDefault();
-        card.classList.toggle('is-flipped');
-      }, {passive: true});
+        userAdvance();
+      }, { passive: true });
 
-      setInterval(function() {
-        card.classList.add('is-flipped');
-        setTimeout(function() {
-          card.classList.remove('is-flipped');
-        }, 1500);
-      }, 9000);
+      // Hover to advance once per hover (desktop)
+      card.addEventListener('mouseenter', function () {
+        userAdvance();
+      });
     })();
 </script>
 
