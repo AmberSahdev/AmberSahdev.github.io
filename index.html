@@ -97,6 +97,13 @@ Get notified about my next project, maybe, probably:
       e.preventDefault();
       card.classList.toggle('is-flipped');
     }, {passive: true});
+
+    setInterval(function() {
+      card.classList.add('is-flipped');
+      setTimeout(function() {
+        card.classList.remove('is-flipped');
+      }, 1500);
+    }, 9000);
   })();
 </script>
 
