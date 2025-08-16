@@ -24,7 +24,16 @@
 
 <br>
 
-<a href="#"><img src="resources/self2.png" alt="Amber Sahdev Portrait" class="profile-img"></a>
+<div class="profile-card" id="profile-card" aria-label="Profile photo flip card">
+  <div class="profile-card-inner">
+    <div class="profile-face front">
+      <img src="resources/self2.png" alt="Amber Sahdev Portrait" loading="lazy">
+    </div>
+    <div class="profile-face back">
+      <img src="resources/self3.png" alt="Amber Sahdev Portrait Alternate" loading="lazy">
+    </div>
+  </div>
+</div>
 <br><br>
 
 <div id="left-align-this-text">
@@ -32,7 +41,7 @@
     <br><br>
 
     Some recent things:
-    <div style="display: flex; margin: 0; padding: 0; width: 100%;">
+    <div style="display: flex; margin-bottom: 10px; padding: 0; width: 100%;">
         <ul style="text-align: left; margin: 10px; width: 100%;">
             <li><a href="https://AmberSah.dev/edge">Edge</a> - QA for Voice Agents</li>
             <li><a href="https://RedialAPI.com">Redial</a> - Voice AI Infrastructure</li>
@@ -54,7 +63,6 @@
         </ul>
     </div>
 
-    <br>
     Here's my <a href="/resume">resume</a>.
     <br>
     (Reach out to me about roles in Robotics or ML)
@@ -80,6 +88,17 @@ Get notified about my next project, maybe, probably:
             frameborder="0"
             scrolling="no"></iframe>
 </div>
+
+<script>
+  (function () {
+    var card = document.getElementById('profile-card');
+    if (!card) return;
+    card.addEventListener('click', function (e) {
+      e.preventDefault();
+      card.classList.toggle('is-flipped');
+    }, {passive: true});
+  })();
+</script>
 
 </body>
 </html>
