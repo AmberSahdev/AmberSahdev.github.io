@@ -105,14 +105,18 @@ Get notified about my next project, maybe, probably:
       var frontImg = card.querySelector('.profile-face.front img');
       var backImg  = card.querySelector('.profile-face.back img');
       var imgs = [
-        'resources/self2.png',
+        'resources/self5.jpeg',
         'resources/self3.png',
-        'resources/self4.png'
+        /*
+        'resources/self4.png',
+        'resources/self2.png',
+        'resources/self6.jpeg',*/
       ];
       var idx = 0;            // index of the currently visible image
       var flipped = false;    // false: front visible, true: back visible
       var isFlipping = false;
       var timerId = null;
+      var rotation = 0;       // track cumulative rotation so direction is consistent
 
       function setFacesInitial() {
         // Visible face shows imgs[idx]; hidden face shows the next image
@@ -139,7 +143,8 @@ Get notified about my next project, maybe, probably:
       function advance() {
         if (isFlipping) return;
         isFlipping = true;
-        card.classList.toggle('is-flipped'); // single 180° rotation per advance
+        rotation += 180; // keep rotating in the same direction
+        inner.style.transform = 'rotateY(' + rotation + 'deg)';
       }
 
       function startTimer() { timerId = setInterval(advance, 7000); }
