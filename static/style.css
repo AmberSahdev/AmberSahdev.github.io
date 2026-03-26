@@ -11,8 +11,18 @@ body {
 
 /* Profile image (standalone usages) */
 .profile-img {
+  --card-w: min(50vw, 300px);
+  --card-h: calc(var(--card-w) * 4 / 3);
+  width: var(--card-w);
+  height: var(--card-h);
+  margin: 0 auto;
   border-radius: 4px;
   box-shadow: 3px 3px 6px gray;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .profile-img { --card-w: min(65vw, 360px); }
 }
 
 /* ===========================================================
@@ -150,63 +160,7 @@ ul li {
   margin: none;           /* centered, vertical rhythm */
 }
 
-/* ===========================================================
-   Profile Flip Card
-   - Hover on desktop, click/tap toggles via JS
-   - Stable aspect & no white edges
-   =========================================================== */
-  .profile-card {
-    display: block;           /* avoid inline baseline jitter */
-    margin: 0 auto;           /* keep it centered */
-    /* Lock dimensions using a stable width and derived height (3:4 ratio) */
-    --card-w: min(50vw, 260px);
-    --card-h: calc(var(--card-w) * 4 / 3);
-    width: var(--card-w);
-    height: var(--card-h);
-    min-width: var(--card-w);
-    max-width: var(--card-w);
-    min-height: var(--card-h);
-    max-height: var(--card-h);
-    perspective: 1000px;
-    cursor: pointer;
-    line-height: 0;           /* remove line box space that can nudge siblings */
-    overflow: hidden;         /* ensure faces never affect layout */
-  }
 
-  /* Slightly wider on small screens while still fixed in ratio */
-  @media (max-width: 768px) {
-    .profile-card { --card-w: min(65vw, 360px); }
-  }
-.profile-card-inner {
-  display: grid;
-  /* stack faces */
-  transform-style: preserve-3d;
-  transition: transform 0.85s cubic-bezier(0.4, 0.2, 0.2, 1);
-  width: 100%;
-  height: 100%;
-  will-change: transform;
-}
-/* Flip on click/tap (handled by .is-flipped) */
-.profile-card.is-flipped .profile-card-inner { transform: rotateY(180deg); }
-
-.profile-face {
-  grid-area: 1 / 1;       /* perfect overlap */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow: hidden;
-  border-radius: 4px;
-  width: 100%;
-  height: 100%;
-  transform: translateZ(0);
-}
-.profile-face.front { transform: rotateY(0deg); }
-.profile-face.back  { transform: rotateY(180deg); }
-.profile-face img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* eliminates white edges */
-}
 
 /* ===========================================================
    Resume page (minimal polish)
