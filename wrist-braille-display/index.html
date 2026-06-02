@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Wrist Braille Display | Amber Sahdev</title>
+    <meta name="description" content="Wrist Braille Display project by Amber Sahdev.">
+    <meta name="author" content="Amber Sahdev">
+    <link rel="canonical" href="https://ambersah.dev/wrist-braille-display/">
+    <link rel="icon" href="/resources/preview.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="/static/style.css?v=28">
+
+    <style>
+        body {
+            margin: 0;
+        }
+        .project-page {
+            box-sizing: border-box;
+            margin: 40px auto 44px;
+            max-width: 1060px;
+            padding: 0 20px;
+            text-align: left;
+        }
+        .project-nav {
+            display: inline-block;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+        .braille-board {
+            padding: 20px 28px;
+        }
+        .project-title {
+            font-size: 32px;
+            font-weight: 500;
+            margin: 0 0 14px;
+        }
+        .project-facts {
+            margin: 0;
+            padding-left: 22px;
+        }
+        .project-facts li {
+            line-height: 1.55;
+            margin-bottom: 4px;
+        }
+        .flow-step,
+        .flow-arrow {
+            white-space: nowrap;
+        }
+        .flow-arrow {
+            margin: 0 2px;
+        }
+        .collage-grid {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            margin: clamp(34px, 8vw, 64px) auto 0;
+            max-width: 900px;
+        }
+        .collage-item {
+            margin: 0;
+        }
+        .collage-item img,
+        .image-modal img {
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        .collage-item img {
+            box-sizing: border-box;
+            cursor: zoom-in;
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+        .image-modal {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.94);
+            box-sizing: border-box;
+            display: flex;
+            inset: 0;
+            justify-content: center;
+            padding: 24px;
+            position: fixed;
+            z-index: 1000;
+        }
+        .image-modal[hidden] {
+            display: none;
+        }
+        .image-modal img {
+            border-width: 3px;
+            max-height: 88vh;
+            max-width: 94vw;
+        }
+        .image-modal-close {
+            background: transparent;
+            border: 0;
+            color: #111;
+            cursor: pointer;
+            font-size: 32px;
+            line-height: 1;
+            padding: 8px;
+            position: fixed;
+            right: 16px;
+            top: 12px;
+        }
+        .collage-one,
+        .collage-three {
+            grid-column: 1;
+        }
+        .collage-two {
+            align-self: center;
+            grid-column: 2;
+            grid-row: 1 / 3;
+        }
+        .collage-three {
+            grid-row: 2;
+        }
+        @media (max-width: 760px) {
+            .project-page {
+                margin-top: 30px;
+            }
+            .braille-board {
+                padding: 18px 0 34px;
+            }
+            .project-title {
+                font-size: 26px;
+                line-height: 1.15;
+            }
+            .project-facts {
+                font-size: 16px;
+                padding-left: 20px;
+            }
+            .project-facts li {
+                line-height: 1.45;
+                margin-bottom: 6px;
+            }
+            .flow-arrow { margin: 0 1px; }
+        }
+    </style>
+</head>
+<body>
+<div class="colorbar-container">
+    <img src="/resources/colorbar.png" alt="Color Bar" class="colorbar-img"/>
+</div>
+
+<main class="project-page">
+    <a class="project-nav" href="/">&larr; Back to <b>AmberSah.dev</b></a>
+
+    <section class="braille-board" aria-labelledby="project-title">
+        <h1 class="project-title" id="project-title">Wrist Braille Display</h1>
+
+        <ul class="project-facts">
+            <li>2014</li>
+            <li>$20</li>
+            <li>430 million people worldwide with nerve deafness, left out of conversations without interpreters or captions</li>
+            <li><span class="flow-step">Android</span> <span class="flow-arrow">&rarr;</span> <span class="flow-step">Live Speech-to-Text</span> <span class="flow-arrow">&rarr;</span> <span class="flow-step">Bluetooth</span> <span class="flow-arrow">&rarr;</span> <span class="flow-step">Arduino</span> <span class="flow-arrow">&rarr;</span> <span class="flow-step">Servos</span> <span class="flow-arrow">&rarr;</span> <span class="flow-step">Wrist</span></li>
+        </ul>
+
+        <div class="collage-grid">
+            <figure class="collage-item collage-one">
+                <img src="/resources/braille/1.JPG" alt="Arduino, breadboard, wires, and servo motors for the braille display" loading="lazy">
+            </figure>
+            <figure class="collage-item collage-two">
+                <img src="/resources/braille/2.jpeg" alt="Wrist-mounted braille display prototype with servos" loading="lazy">
+            </figure>
+            <figure class="collage-item collage-three">
+                <img src="/resources/braille/3.JPG" alt="Breadboard and Arduino wiring for the wrist braille display prototype" loading="lazy">
+            </figure>
+        </div>
+    </section>
+</main>
+<div class="image-modal" id="image-modal" role="dialog" aria-modal="true" hidden>
+    <button class="image-modal-close" type="button" aria-label="Close image">&times;</button>
+    <img src="" alt="">
+</div>
+<script>
+    (() => {
+        const modal = document.getElementById('image-modal');
+        const modalImage = modal.querySelector('img');
+
+        const closeModal = () => {
+            modal.hidden = true;
+            modalImage.removeAttribute('src');
+            modalImage.alt = '';
+        };
+
+        document.querySelector('.collage-grid').addEventListener('click', (event) => {
+            const image = event.target.closest('img');
+            if (!image) return;
+
+            modalImage.src = image.currentSrc || image.src;
+            modalImage.alt = image.alt;
+            modal.hidden = false;
+        });
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal || event.target.closest('.image-modal-close')) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.hidden) {
+                closeModal();
+            }
+        });
+    })();
+</script>
+</body>
+</html>

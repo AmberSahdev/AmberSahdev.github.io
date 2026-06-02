@@ -1,12 +1,29 @@
 /* ===========================================================
    Base
    =========================================================== */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 body {
   justify-content: center;
+  padding-bottom: 36px;
   text-align: center;
   font-size: 18px;
   font-family: optima;
   /* background-color: #F5F5F5; // kept commented: Substack embed glitches */
+}
+
+a,
+a:visited {
+  color: #ed7200;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.1em;
+}
+.featured-project-link {
+  font-weight: 500;
+  text-shadow: 0.25px 0 currentColor;
 }
 
 /* Profile image (standalone usages) */
@@ -33,11 +50,12 @@ ul {
 }
 
 ul li {
-  line-height: 1.5; /* readability */
+  line-height: 1.75;
 }
 
 /* Force one-line on desktop only (used for Wheredle line) */
 .nowrap-desktop { white-space: nowrap; }
+.nowrap { white-space: nowrap; }
 @media (max-width: 768px) {
   .nowrap-desktop { white-space: normal; }
 }
@@ -55,26 +73,46 @@ ul li {
 }
 
 /* ===========================================================
-   Substack embed (mask legal disclaimer inside iframe)
+   Subscribe form
    =========================================================== */
-.substack-embed { /* iframe element */
-  border: none;           /* remove default border */
-  background: white;
-  border-radius: 6px;
-}
-
 .substack-embed-wrapper {
-  position: relative;
   display: inline-block;
+  margin: 18px 0 24px;
+  max-width: 340px;
+  width: calc(100vw - 48px);
 }
-.substack-embed-wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.subscribe-form {
+  align-items: stretch;
+  border: 1px solid #ed7200;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  height: 42px;
+  overflow: hidden;
   width: 100%;
-  height: 86px;          /* adjust to cover disclaimer */
-  background: white;
+}
+.subscribe-form input {
+  border: 0;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  font: inherit;
+  font-size: 14px;
+  min-width: 0;
+  outline: none;
+  padding: 0 14px;
+}
+.subscribe-form button {
+  background: #fc7a00;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font: inherit;
+  font-size: 14px;
+  padding: 0 18px;
+}
+.subscribe-form:focus-within {
+  box-shadow: 0 0 0 1px #ed7200;
 }
 
 /* ===========================================================
@@ -101,15 +139,48 @@ ul li {
    Recent things list wrappers
    =========================================================== */
 .recent-things-container {
-  display: flex;
-  margin-bottom: 10px;
+  display: block;
+  margin-bottom: 20px;
   padding: 0;
   width: 100%;
 }
 .recent-things-list {
+  box-sizing: border-box;
   text-align: left;
   margin: 10px;
   width: 100%;
+}
+.recent-things-list > .other-expander {
+  list-style: none;
+  position: relative;
+}
+.recent-things-list > .other-expander summary {
+  color: black;
+  cursor: pointer;
+  display: inline;
+}
+.recent-things-list > .other-expander summary::-webkit-details-marker {
+  display: none;
+}
+.recent-things-list > .other-expander summary::marker {
+  content: "";
+}
+.recent-things-list > .other-expander summary::before {
+  color: black;
+  content: "▸";
+  left: -1.25em;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  width: 1em;
+}
+.recent-things-list > .other-expander details[open] > summary::before {
+  content: "▾";
+}
+.recent-things-list > .other-expander ul {
+  margin: 6px 0 0;
+  padding-left: 0.75em;
 }
 .repo-stars-img {
   margin-left: 10px;

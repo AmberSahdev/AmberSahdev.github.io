@@ -25,7 +25,7 @@
     <meta name="twitter:description" content="Amber Sahdev's Portfolio.">
     <meta name="twitter:image" content="https://ambersah.dev/resources/preview.png">
 
-    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="static/style.css?v=28">
 </head>
 <body>
 
@@ -39,36 +39,45 @@
 <br><br>
 
 <div id="left-align-this-text">
-    Hi, I'm Amber Sahdev, and I'm probably building something. 
+    Heyo, I'm Amber Sahdev, and I'm probably building something. 
     <br><br>
 
     Some recent things:
     <div class="recent-things-container">
         <ul class="recent-things-list">
-            <li><a href="https://CxEdge.ai">Edge</a> - PostHog for Voice AI</li>
-            <li><a href="https://RedialAPI.com">Redial</a> - Voice AI Telephony & Infrastructure</li>
+            <li><a href="https://CxEdge.ai" target="_blank" rel="noopener" class="featured-project-link">Edge</a> - PostHog for Voice AI</li>
+            <li><a href="https://RedialAPI.com" target="_blank" rel="noopener" class="featured-project-link">Redial</a> - Voice AI Telephony & Infrastructure</li>
             <li>
-                <a href="https://github.com/AmberSahdev/Open-Interface">Open Interface</a>
-                -<a href="https://github.com/AmberSahdev/Open-Interface"><img alt="GitHub Repo stars"
+                <a href="https://github.com/AmberSahdev/Open-Interface" target="_blank" rel="noopener" class="featured-project-link">Open Interface</a>
+                -<a href="https://github.com/AmberSahdev/Open-Interface" target="_blank" rel="noopener"><img alt="GitHub Repo stars"
                                                                               src="https://img.shields.io/github/stars/AmberSahdev/Open-Interface?label=Github Stars"
                                                                               class="repo-stars-img" height=19>
             </a>
             </li>
-            <li><a href="https://NudgeNotifier.com">Nudge</a> - Used by Salesforce, Google, Berkeley, and more.</li>
             <li>
                 <span class="nowrap-desktop">
-                    <a href="https://wheredle.xyz">Wheredle</a>
+                    <a href="https://wheredle.xyz" target="_blank" rel="noopener" class="featured-project-link">Wheredle</a>
                     - 500k+ users, played 6M+ times,
-                    <a href="https://www.pcgamer.com/combine-wordle-with-geoguessr-and-youve-got-a-new-daily-fixation-wheredle/">PC Gamer Article</a>
+                    <a href="https://www.pcgamer.com/combine-wordle-with-geoguessr-and-youve-got-a-new-daily-fixation-wheredle/" target="_blank" rel="noopener">PC Gamer Article</a>
                 </span>
+            </li>
+            <li class="other-expander">
+                <details>
+                    <summary>Misc ...</summary>
+                    <ul>
+                        <li><span class="nowrap"><a href="https://codexpetshop.com" target="_blank" rel="noopener" class="featured-project-link">Codex Pet Shop</a> - Adopt, Don't Shop</span></li>
+                        <li><span class="nowrap">Early Bird <a href="https://getstheworm.com" target="_blank" rel="noopener" class="featured-project-link">GetsTheWorm</a></span></li>
+                        <li><a href="https://NudgeNotifier.com" target="_blank" rel="noopener" class="featured-project-link">Nudge</a> - Used by Salesforce, Google, Microsoft, Berkeley, and more.</li>
+                        <li><a href="/wrist-braille-display/" target="_blank" rel="noopener" class="featured-project-link">Braille</a> - 2014</li>
+                    </ul>
+                </details>
             </li>
         </ul>
     </div>
 
-    Here's my <a href="/resume">resume</a>.
+    Here's my <a href="/resume" target="_blank" rel="noopener">resume</a>.
     <br>
     <!--(Reach out to me about roles in AI or Robotics)-->
-    <br>
     <br>
     <div class="contact-icons" aria-label="Social links">
         <a href="https://www.linkedin.com/in/AmberSahdev" target="_blank" rel="noopener" class="contact-icon" aria-label="LinkedIn">
@@ -92,12 +101,15 @@
 Get notified about my next project, maybe, probably:
 <br>
 <div class="substack-embed-wrapper">
-    <iframe src="https://ambersahdev.substack.com/embed"
-            width="340"
-            height="140"
-            class="substack-embed"
-            frameborder="0"
-            scrolling="no"></iframe>
+    <form class="subscribe-form"
+          action="https://ambersahdev.substack.com/api/v1/free?nojs=true"
+          method="post"
+          target="_blank"
+          rel="noopener">
+        <input type="hidden" name="source" value="embed">
+        <input type="email" name="email" placeholder="Type your email..." aria-label="Email address" required>
+        <button type="submit">Subscribe</button>
+    </form>
 </div>
 
 
