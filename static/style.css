@@ -21,7 +21,9 @@ a:visited {
   text-decoration-thickness: 0.05em;
   text-underline-offset: 0.1em;
 }
-.featured-project-link {
+.featured-project-link,
+.intro-name,
+.recent-things-list > .other-expander summary {
   font-weight: 500;
   text-shadow: 0.25px 0 currentColor;
 }
