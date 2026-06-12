@@ -222,6 +222,7 @@ ul li {
 .contact-icon[aria-label="LinkedIn"] svg { fill: #0a66c2; }
 .contact-icon[aria-label="Twitter"] svg { fill: #1d9bf0; }
 .contact-icon[aria-label="GitHub"] svg { fill: #111; }
+.contact-icon[aria-label="Substack"] svg { fill: #ff6719; }
 
 /* ===========================================================
    Notion-like divider
