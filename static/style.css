@@ -186,8 +186,15 @@ ul li {
 }
 .repo-stars-img {
   margin-left: 10px;
+  outline: 1px solid #000;
+  outline-offset: -1px;
   position: relative;
   top: 3px;
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+.repo-stars-img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px) scale(1.04);
 }
 
 /* ===========================================================
