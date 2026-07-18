@@ -253,6 +253,10 @@ ul li {
   padding: 8px 12px;
   margin: 36px auto 12px;
 }
+.resume-nav-bottom {
+  font-size: 18px;
+  margin: 8px auto 20px;
+}
 .resume-nav .nav-link {
   color: #0f6fde; /* light blue */
   text-decoration: none;
@@ -297,6 +301,15 @@ ul li {
   height: 1500px; /* shows ~1.5+ pages */
   border: 1px solid #e3e5eb;
   border-radius: 6px;
+}
+@media (min-width: 769px) {
+  .resume-nav-top {
+    font-size: 24px;
+  }
+  .resume-nav-top .nav-linkedin svg {
+    height: 21px;
+    width: 21px;
+  }
 }
 @media (max-width: 768px) {
   .resume-nav { flex-wrap: wrap; justify-content: center; }
