@@ -192,6 +192,10 @@ ul li {
   top: 3px;
   transition: box-shadow 120ms ease, transform 120ms ease;
 }
+.repo-badge-link,
+.repo-badge-link:visited {
+  text-decoration: none;
+}
 .repo-stars-img:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.22);
   transform: translateY(-2px) scale(1.04);
