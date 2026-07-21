@@ -261,17 +261,43 @@ ul li {
   font-size: 18px;
   margin: 8px auto 20px;
 }
+.resume-breadcrumbs ol {
+  align-items: center;
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.resume-breadcrumbs li + li::before {
+  color: #b5b8c4;
+  content: "/";
+  font-weight: 400;
+  margin: 0 10px;
+}
 .resume-nav .nav-link {
   color: #0f6fde; /* light blue */
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
-.resume-nav .nav-link:hover { color: #0c5abb; text-decoration: underline; }
+.resume-nav .nav-link:hover {
+  color: #0c5abb;
+  text-decoration-thickness: 2px;
+}
+.nav-home-link {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+}
+.nav-home-avatar {
+  height: 21px;
+  object-fit: contain;
+  width: auto;
+}
 .resume-nav .nav-current {
   font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-decoration-color: #cfd4e2;
+  text-decoration: none;
 }
 .resume-nav .nav-sep { color: #b5b8c4; }
 .nav-linkedin {
@@ -279,12 +305,14 @@ ul li {
   align-items: center;
   gap: 6px;
   color: #0a66c2;
-  text-decoration: none;
   font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 .nav-linkedin:hover {
   color: #084f9d;
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 .nav-linkedin svg {
   width: 18px;
@@ -313,6 +341,9 @@ ul li {
   .resume-nav-top .nav-linkedin svg {
     height: 21px;
     width: 21px;
+  }
+  .resume-nav-top .nav-home-avatar {
+    height: 27px;
   }
 }
 @media (max-width: 768px) {

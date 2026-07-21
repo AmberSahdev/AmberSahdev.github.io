@@ -21,9 +21,12 @@
 </div>
 
 <nav class="resume-nav resume-nav-top" aria-label="Resume navigation">
-    <a class="nav-link" href="/">← Home</a>
-    <span class="nav-sep">•</span>
-    <span class="nav-current">Resume</span>
+    <a class="nav-link nav-home-link" href="/">
+        ← Home
+        <img src="resources/nav-avatar.webp" alt="" class="nav-home-avatar" aria-hidden="true">
+    </a>
+    <span class="nav-sep" aria-hidden="true">•</span>
+    <span class="nav-current" aria-current="page">Resume</span>
     <span class="nav-sep">•</span>
     <a class="nav-linkedin" href="https://www.linkedin.com/in/AmberSahdev" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -34,7 +37,7 @@
 </nav>
 
 <p class="resume-note">
-    If the embed below doesn't load, you can view my resume
+    If the embed below doesn't load, you can view my resume on Google Drive
     <a href="https://drive.google.com/file/d/1EnyDJo2wyH3O20pF-jDvvM_8ZPNxK9qY/view" target="_blank" rel="noopener"><b>here</b></a>.
 </p>
 
@@ -50,14 +53,11 @@
     [<a href="https://drive.google.com/file/d/1EnyDJo2wyH3O20pF-jDvvM_8ZPNxK9qY/view" target="_blank" rel="noopener">Resume - <b>Google Drive Link</b></a>]
 </p>
 
-<nav class="resume-nav resume-nav-bottom" aria-label="Resume breadcrumb">
-    <a class="nav-link" href="/">← Home</a>
-    <span class="nav-sep">•</span>
-    <span class="nav-current">Resume</span>
-    <span class="nav-sep">•</span>
-    <a class="nav-linkedin" href="https://www.linkedin.com/in/AmberSahdev" target="_blank" rel="noopener">
-        LinkedIn →
-    </a>
+<nav class="resume-nav resume-nav-bottom resume-breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-current" aria-current="page">Resume</li>
+    </ol>
 </nav>
 <script src="/static/analytics.js" defer></script>
 </body>
