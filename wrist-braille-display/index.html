@@ -65,6 +65,7 @@
             font-size: 14px;
             line-height: 1.3;
             margin-top: 8px;
+            text-align: center;
         }
         .collage-item img,
         .image-modal img {
@@ -129,18 +130,6 @@
             justify-content: center;
             margin-top: 14px;
         }
-        .collage-one,
-        .collage-three {
-            grid-column: 1;
-        }
-        .collage-two {
-            align-self: center;
-            grid-column: 2;
-            grid-row: 1 / 3;
-        }
-        .collage-three {
-            grid-row: 2;
-        }
         @media (max-width: 760px) {
             .project-page {
                 margin-top: 30px;
@@ -185,22 +174,19 @@
         <div class="collage-grid">
             <figure class="collage-item collage-one">
                 <img src="/resources/braille/1.JPG" alt="Arduino, breadboard, wires, and servo motors for the braille display" loading="lazy">
+                <figcaption>
+                    <span class="intro-name">2014</span>
+                    <br>
+                    Best picture I could take with my desktop's webcam
+                </figcaption>
             </figure>
             <figure class="collage-item collage-two">
                 <img src="/resources/braille/2.jpeg" alt="Wrist-mounted braille display prototype with servo motors" loading="lazy">
-                <figcaption><center>
+                <figcaption>
                     <span class="intro-name">2024</span>
                     <br>
                     Random picture I took while moving
-                </center></figcaption>
-            </figure>
-            <figure class="collage-item collage-three">
-                <img src="/resources/braille/3.JPG" alt="Breadboard and Arduino wiring for the wrist braille display prototype" loading="lazy">
-                <figcaption><center>
-                    <span class="intro-name">2014</span>
-                    <br>
-                    Best pictures I could take with my desktop's webcam
-                </center></figcaption>
+                </figcaption>
             </figure>
         </div>
     </section>
