@@ -30,7 +30,7 @@ a:visited {
 
 /* Profile image (standalone usages) */
 .profile-img {
-  --card-w: min(50vw, 300px);
+  --card-w: min(50vw, 275px);
   --card-h: calc(var(--card-w) * 4 / 3);
   width: var(--card-w);
   height: var(--card-h);
